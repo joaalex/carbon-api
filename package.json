@@ -1,0 +1,29 @@
+{
+  "name": "carbon-api",
+  "version": "1.0.0",
+  "description": "the magical api for all fintech transactions",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZULFAHGROUP/carbon-api.git"
+  },
+  "author": "rosh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZULFAHGROUP/carbon-api/issues"
+  },
+  "homepage": "https://github.com/ZULFAHGROUP/carbon-api#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "express-routemap": "^1.6.0"
+  }
+}
