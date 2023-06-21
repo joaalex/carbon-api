@@ -6,14 +6,32 @@ const port = process.env.PORT
 const displayRoutes = require('express-routemap');
 const userRoutes = require('./routes/userRoutes')
 const { notFoundMessage } = require('./constants/messages')
-
+const sequelize = require('./config/db')
 app.use('/api/v1/user',userRoutes)
 
 app.use(bodyParser.json())
-app.listen(port, () => {
-  //console.log(`Example app listening on port ${port}`)
-  displayRoutes(app);
-})
+
+  sequelize.authenticate()
+  .then(() => {
+   console.log('Connection has been established successfully.');
+    app.listen(port, () => {
+      displayRoutes(app);
+    })
+  })
+  .catch(err => console.log('Error: ' + err))
+  
+// const dbCon = async()=> { 
+//   try {
+//     await sequelize.authenticate()
+//     app.listen(port, () => { 
+//       displayRoutes(app);
+//     })
+//   } catch (error) {
+//     console.log('Error: ' + error)
+//    }
+// }
+// dbCon()
+
 
 app.use((req, res) => { 
     res.status(404).json({

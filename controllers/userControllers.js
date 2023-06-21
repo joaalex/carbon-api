@@ -1,10 +1,13 @@
 const { registerMessage, loginMessage } = require('../constants/messages')
+const UserModel = require('../models/userModels')
 
-const createUser = (req, res) => {
+const createUser = async (req, res) => {
     //create user
+  // const allusers = await UserModel.findAll()
     res.status(200).json({
         status: true,
-        message: registerMessage 
+        message: registerMessage
+       // data : allusers
     })
 }
 
