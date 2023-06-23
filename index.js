@@ -11,14 +11,14 @@ app.use('/api/v1/user',userRoutes)
 
 app.use(bodyParser.json())
 
-  sequelize.authenticate()
-  .then(() => {
-   console.log('Connection has been established successfully.');
-    app.listen(port, () => {
-      displayRoutes(app);
-    })
+sequelize.authenticate()
+.then(() => {
+  console.log('Connection has been established successfully.');
+  app.listen(port, () => {
+    displayRoutes(app);
   })
-  .catch(err => console.log('Error: ' + err))
+})
+.catch(err => console.log('Error: ' + err))
   
 // const dbCon = async()=> { 
 //   try {
